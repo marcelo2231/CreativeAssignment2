@@ -1,0 +1,208 @@
+/********************
+    Default Styles
+ ********************/
+web{
+    
+}
+body {
+    margin-top:0;
+    color: rgb(50, 50, 50);
+    background-color: white;
+    font-family: 'Montserrat';
+    margin-left: 10%;
+    margin-right: 10%;
+    position: relative;
+    text-align: center;
+    list-style-position: inside;
+    background: url(./images/code.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body.body-style-one{
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat';;
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+a {
+    text-decoration: none;
+}
+a:link{
+    color:#92DCE5;
+}
+a:visited{
+  color:#DDEBEC;
+}
+a:hover{
+  color:#DDEBEC;
+}
+a:focus{
+  color:#DDEBEC;
+}
+a:active{
+  color:#DDEBEC;
+}
+button {
+    background-color: #A31621;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+}
+
+/********************
+    Page
+ ********************/
+.page section {
+    padding: 40px;
+}
+.page .section-header,
+.page .section-body-two {
+    margin: auto;
+    width: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: #FCF7F8;
+}
+.page .section-body {
+    margin: auto;
+    width: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: white;
+}
+.page-header-image-full {
+    overflow: hidden;
+    height: 100vh;
+    /*max-width: 100%;*/
+}
+.page-header-image-full img {
+    min-width: 100%;
+    max-width: inherit;
+}
+.page-title {
+    text-align: center;
+    margin: 5vh;
+    font-weight: 700;
+    font-size: 52px;
+}
+/********************
+    Background Color
+ ********************/
+.bg-dark {
+    color: rgb(240, 240, 240);
+}
+.bg-color-1 {
+    background-color: #00c1c1;
+}
+.bg-color-2 {
+    background-color: rgb(100, 100, 100);
+}
+.bg-color-3 {
+    background-color: rgb(0, 100, 100);
+}
+.tab {
+    background-color: #FCF7F8;
+    width: auto;
+}
+
+/********************
+    Grid
+ ********************/
+.row {
+    display: flex;
+}
+.col {
+    max-width: 100%;
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+/********************
+    Project Card
+ ********************/
+.project-card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+.project-card-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    color: rgb(242, 170, 36);
+    background-color: rgba(50, 50, 50, .7);
+    padding: 40px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+.project-card:hover .project-card-content {
+    display: flex;
+}
+
+div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+.line {
+        padding-left : 2vw;
+        background-color:black;
+        height:2px;
+        width:60%;
+    }
+    
+#eventusDescription {
+    display: none;
+}
+
+#glossaDescription {
+    display: none;
+}
+
+#navitaireDescription {
+    display: none;
+}
+
+#v3Description {
+    display: none;
+}
+
+#swoopvivaDescription {
+    display: none;
+}
+
+#familyappDescription {
+    display: none;
+}

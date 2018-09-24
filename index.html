@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">-->
+        <!--<link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    
+    <body id="body-style-one">
+        <section class="page">
+            <section class="section-body">
+                <img src="./images/logo.PNG"/>
+                <h1>Creative Assignment</h1>
+                <br>
+                <p>Website. </p>
+                <br>
+            </section>
+            <section class="tab">
+                <button href="#about">About</button>
+                <button href="#experiences">Experiences</button>
+
+                </section>
+            <section id="about" style="background-color: white;>
+                <header class="section-header">
+                    <h2>About</h2>
+                    <hr class="line"/>
+                </header>
+                <div class="section-body">
+                <p>Example</p>
+                </section>
+            
+            
+            <section id="experiences" style="background-color: #FCF7F8;>
+                <header class="section-header">
+                    <h2>Experiences</h2>
+                    <hr class="line"/>
+                </header>
+                <div class="section-body-two">
+                    <p>Example:</p>
+                    <div class="row">
+                        <div class="col">
+                            <div class="project-card">
+                                <img src="./images/navitaire.png" alt="navitaire" id="navitaire">
+                                <a href="https://www.navitaire.com/" target="_blank" class="project-card-content">
+                                    <h4>Navitaire</h4>
+                                    <p>An Amadeus Company</p>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="col">
+                            <div class="project-card">
+                                <img src="./images/eventus.jpg" alt="eventus" id="eventus">
+                                <a href="https://www.facebook.com/eventus.assessoriaecerimonial" target="_blank" class="project-card-content">
+                                    <h4>Eventus</h4>
+                                    <p>Advisory and Ceremonial</p>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="col">
+                            <div class="project-card">
+                                <img src="./images/glossa.png" alt="glossa" id="glossa">
+                                <a href="https://www.linkedin.com/company/glossa-llc" target="_blank" class="project-card-content">
+                                    <h4>Glossa</h4>
+                                    <p>Language Services</p>
+                                </a>
+                            </div>                        </div>
+                    </div>
+                </div>
+               
+            
+            </section>
+        
+         </section>
+        
+        
+        
+        <script>    
+            function displayNavitaireExperienceDescription() {
+                var x = document.getElementById("glossaDescription");
+                var y = document.getElementById("navitaireDescription");
+                var z = document.getElementById("eventusDescription");
+                if (y.style.display === "block") {
+                    y.style.display = "none";
+                    x.style.display = "none";
+                    z.style.display = "none";
+                } else {
+                    y.style.display = "block";
+                    x.style.display = "none";
+                    z.style.display = "none";
+                }
+            }
+            function displayEventusExperienceDescription() {
+                var x = document.getElementById("glossaDescription");
+                var y = document.getElementById("navitaireDescription");
+                var z = document.getElementById("eventusDescription");
+                if (z.style.display === "block") {
+                    y.style.display = "none";
+                    x.style.display = "none";
+                    z.style.display = "none";
+                } else {
+                    y.style.display = "none";
+                    x.style.display = "none";
+                    z.style.display = "block";
+                }
+            }
+            function displayGlossaExperienceDescription() {
+                var x = document.getElementById("glossaDescription");
+                var y = document.getElementById("navitaireDescription");
+                var z = document.getElementById("eventusDescription");
+                if (x.style.display === "block") {
+                    y.style.display = "none";
+                    x.style.display = "none";
+                    z.style.display = "none";
+                } else {
+                    y.style.display = "none";
+                    x.style.display = "block";
+                    z.style.display = "none";
+                }
+            }
+          
+        </script>
+    </body>
+</html>
