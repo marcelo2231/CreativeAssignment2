@@ -11,67 +11,42 @@
     <body id="body-style-one">
         <section class="page">
             <section class="section-body">
-                <img src="./images/logo.PNG"/>
+                <img src="./images/logo.png"/>
                 <h1>Creative Assignment</h1>
                 <br>
-                <p>Website. </p>
+                <p>Look for Government Engineer jobs in different states. </p>
                 <br>
             </section>
             <section class="tab">
-                <button href="#about">About</button>
-                <button href="#experiences">Experiences</button>
+                <button onClick="displayFind()">Find</button>
 
-                </section>
-            <section id="about" style="background-color: white;>
+            </section>
+            <section id="find" style="background-color: white;>
                 <header class="section-header">
-                    <h2>About</h2>
+                    <h2>Find</h2>
                     <hr class="line"/>
                 </header>
                 <div class="section-body">
-                <p>Example</p>
-                </section>
+                <p></p>
+                <form>
+                    Enter an USA State: <input type="text" id="stateField" value=""><br><br>
+                    Suggestion: <span id="txtHint">Empty</span>
+                    <input id="jobsButton" type="submit" value="Submit">
+                </form><br>
+                <p>State</p>
+                <textarea id="displayState">No State</textarea><br><br>
+                <p>Current AVailable Jobs</p>
+                <div id="weather">No job</div>
+            </section>
             
             
             <section id="experiences" style="background-color: #FCF7F8;>
                 <header class="section-header">
-                    <h2>Experiences</h2>
+                    <h2>Footer</h2>
                     <hr class="line"/>
                 </header>
-                <div class="section-body-two">
-                    <p>Example:</p>
-                    <div class="row">
-                        <div class="col">
-                            <div class="project-card">
-                                <img src="./images/navitaire.png" alt="navitaire" id="navitaire">
-                                <a href="https://www.navitaire.com/" target="_blank" class="project-card-content">
-                                    <h4>Navitaire</h4>
-                                    <p>An Amadeus Company</p>
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <div class="col">
-                            <div class="project-card">
-                                <img src="./images/eventus.jpg" alt="eventus" id="eventus">
-                                <a href="https://www.facebook.com/eventus.assessoriaecerimonial" target="_blank" class="project-card-content">
-                                    <h4>Eventus</h4>
-                                    <p>Advisory and Ceremonial</p>
-                                </a>
-                            </div>
-                        </div>
-                        
-                        <div class="col">
-                            <div class="project-card">
-                                <img src="./images/glossa.png" alt="glossa" id="glossa">
-                                <a href="https://www.linkedin.com/company/glossa-llc" target="_blank" class="project-card-content">
-                                    <h4>Glossa</h4>
-                                    <p>Language Services</p>
-                                </a>
-                            </div>                        </div>
-                    </div>
-                </div>
-               
-            
+                <br>
+                <p>Marcelo Archiza</p>
             </section>
         
          </section>
@@ -79,49 +54,37 @@
         
         
         <script>    
-            function displayNavitaireExperienceDescription() {
-                var x = document.getElementById("glossaDescription");
-                var y = document.getElementById("navitaireDescription");
-                var z = document.getElementById("eventusDescription");
-                if (y.style.display === "block") {
-                    y.style.display = "none";
-                    x.style.display = "none";
-                    z.style.display = "none";
-                } else {
-                    y.style.display = "block";
-                    x.style.display = "none";
-                    z.style.display = "none";
-                }
-            }
-            function displayEventusExperienceDescription() {
-                var x = document.getElementById("glossaDescription");
-                var y = document.getElementById("navitaireDescription");
-                var z = document.getElementById("eventusDescription");
-                if (z.style.display === "block") {
-                    y.style.display = "none";
-                    x.style.display = "none";
-                    z.style.display = "none";
-                } else {
-                    y.style.display = "none";
-                    x.style.display = "none";
-                    z.style.display = "block";
-                }
-            }
-            function displayGlossaExperienceDescription() {
-                var x = document.getElementById("glossaDescription");
-                var y = document.getElementById("navitaireDescription");
-                var z = document.getElementById("eventusDescription");
+            function displayFind() {
+                var x = document.getElementById("find");
                 if (x.style.display === "block") {
-                    y.style.display = "none";
                     x.style.display = "none";
-                    z.style.display = "none";
                 } else {
-                    y.style.display = "none";
                     x.style.display = "block";
-                    z.style.display = "none";
                 }
             }
           
         </script>
+        <script>
+            $(document).ready(function() {
+             $( "#cityField" ).keyup(function() {
+              var url = "https://bioresearch.byu.edu/cs260/jquery/getcity.cgi?q="+$("#cityField").val();
+              $.getJSON(url,function(data) {
+                console.log(data);
+                console.log(data[0]);
+                console.log("Got "+data[0].city);
+                
+                var everything;
+                everything = "<ul>";
+                $.each(data, function(i,item) {
+                    everything += "<li> "+data[i].city + "</li>";
+                });
+                
+                everything += "</ul>";
+                $("#txtHint").html(everything);
+              });
+            });
+            });
+        </script>
+    
     </body>
 </html>
