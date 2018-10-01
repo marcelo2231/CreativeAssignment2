@@ -102,7 +102,7 @@
                         console.log(myurl);
                         $.ajax({
                             url : myurl,
-                            dataType : "json",
+                            dataType: 'jsonp',
                             success : function(parsed_json) {
                                 everything = "";
                                     $.each(parsed_json, function(i,item) {
