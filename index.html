@@ -14,7 +14,7 @@
                 <img src="./images/logo.png"/>
                 <h1>Creative Assignment</h1>
                 <br>
-                <p>Look for Government Engineer jobs in different states. </p>
+                <p>Work for the US Government! Our website is 100% up-to-date. Look for jobs available now! </p>
                 <br>
             </section>
             <section class="tab">
@@ -27,7 +27,14 @@
                     <hr class="line"/>
                 </header>
                 <div class="section-body">
-                <p></p>
+                <p>Select the job you are looking for:</p>
+                <select id="dropbox">
+                  <option value="engineer">Engineer</option>
+                  <option value="it">IT</option>
+                  <option value="cleaning">Cleaning</option>
+                  <option value="teacher">Teacher</option>
+                </select>
+                <br><br>
                 <form>
                     Enter an USA State: <input type="text" id="stateField" value=""><br><br>
                     Suggestion: <span id="txtHint">Empty</span>
@@ -95,10 +102,11 @@
                 
                 $("#jobsButton").click(function(e){
                     var value = $("#stateField").val().toLocaleLowerCase();
+                    var jobPosition = $("#dropbox").val();
                     console.log(value);
                     e.preventDefault();
                         $("#displayState").text(value);
-                        var myurl = "http://jobs.search.gov/jobs/search.json?query=engineer+jobs+in+" + value;
+                        var myurl = "http://jobs.search.gov/jobs/search.json?query=" + jobPosition + "+jobs+in+" + value;
                         console.log(myurl);
                         $.ajax({
                             url : myurl,
