@@ -75,6 +75,8 @@
     <script
       src="https://code.jquery.com/jquery-3.2.1.min.js">
     </script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    
         <script>
             $(document).ready(function() {
                 $( "#stateField" ).keyup(function() {
@@ -130,9 +132,36 @@
                                     everything += "</ul> <br><br>";
                                 });
                                 $("#jobs").html(everything);
+                                if (jobPosition = ""){
+                                    jobPosition = "engineer";
+                                }
+                                $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
+                                {
+                                    tags: jobPosition,
+                                    tagmode: "any",
+                                    format: "json"
+                                },
+                                function(data) {
+                                    var rnd = Math.floor(Math.random() * data.items.length);
+                        
+                                    var image_src = data.items[rnd]['media']['m'].replace("_m", "_b");
+                                    
+                                    $('body').css('background-image', "url('" + image_src + "')");
+                        
+                                });
                             }
                         });
                 }); 
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
             });
         </script>
     
