@@ -105,6 +105,7 @@
                 $("#jobsButton").click(function(e){
                     var value = $("#stateField").val().toLocaleLowerCase();
                     var jobPosition = $("#dropbox").val();
+                    var beauty = "beautiful";
                     console.log(value);
                     e.preventDefault();
                         $("#displayState").text(value);
@@ -132,13 +133,16 @@
                                     everything += "</ul> <br><br>";
                                 });
                                 $("#jobs").html(everything);
-                                if (jobPosition = ""){
+                                if (!jobPosition){
                                     jobPosition = "engineer";
+                                }
+                                if(!value){
+                                    value = "utah"
                                 }
                                 $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
                                 {
-                                    tags: jobPosition,
-                                    tagmode: "any",
+                                    tags: value , jobPosition , beauty,
+                                    tagmode: "all",
                                     format: "json"
                                 },
                                 function(data) {
@@ -147,18 +151,15 @@
                                     var image_src = data.items[rnd]['media']['m'].replace("_m", "_b");
                                     
                                     $('body').css('background-image', "url('" + image_src + "')");
-                        
+                                    console.log(data.items);
+                                    console.log(rnd);
+                                    console.log(jobPosition);
+                                    console.log(value);
+                                    console.log(beauty);
                                 });
                             }
                         });
                 }); 
-                
-                
-                
-                
-                
-                
-                
                 
                 
                 
