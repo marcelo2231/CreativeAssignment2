@@ -10,18 +10,18 @@
     
     <body id="body-style-one">
         <section class="page">
-            <section class="section-body">
+            <section class="section-body" style="background-color: white; opacity: 0.8">
                 <img src="./images/logo.png"/>
                 <h1>Creative Assignment</h1>
                 <br>
                 <p>Work for the US Government! Our website is 100% up-to-date. Look for jobs available now! </p>
                 <br>
             </section>
-            <section class="tab" style="opacity: 0.9;">
+            <section class="tab" style="opacity: 0.8;">
                 <button onClick="displayFind()">Find</button>
 
             </section>
-            <section id="find" style="background-color: white; opacity: 0.9;">
+            <section id="find" style="background-color: white; opacity: 0.8;">
                 <header class="section-header" style="background-color: white;">
                     <h2>Find</h2>
                     <hr class="line"/>
@@ -29,10 +29,13 @@
                 <div class="section-body">
                 <p>Select the job you are looking for:</p>
                 <select id="dropbox">
-                  <option value="engineer">Engineer</option>
-                  <option value="it">IT</option>
+                  <option value="blueprints">Engineer</option>
+                  <option value="technology">IT</option>
                   <option value="cleaning">Cleaning</option>
                   <option value="teacher">Teacher</option>
+                  <option value="calvin and hobbes">Cartoonist</option>
+                  <option value="programming">Programmer</option>
+                  <option value="doctor">Doctor</option>
                 </select>
                 <br><br>
                 <form>
@@ -47,7 +50,7 @@
             </section>
             
             
-            <section id="experiences" style="background-color: #FCF7F8; opacity: 0.9;">
+            <section id="experiences" style="background-color: #FCF7F8; opacity: 0.8;">
                 <header class="section-header">
                     <h2>Footer</h2>
                     <hr class="line"/>
@@ -105,7 +108,6 @@
                 $("#jobsButton").click(function(e){
                     var value = $("#stateField").val().toLocaleLowerCase();
                     var jobPosition = $("#dropbox").val();
-                    var beauty = "beautiful";
                     console.log(value);
                     e.preventDefault();
                         $("#displayState").text(value);
@@ -141,7 +143,7 @@
                                 }
                                 $.getJSON("http://api.flickr.com/services/feeds/photos_public.gne?jsoncallback=?",
                                 {
-                                    tags: value , jobPosition , beauty,
+                                    tags: value,
                                     tagmode: "all",
                                     format: "json"
                                 },

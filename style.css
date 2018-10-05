@@ -52,7 +52,6 @@ a:active{
 button {
     background-color: #A31621;
     border: none;
-    color: white;
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
@@ -80,7 +79,6 @@ button {
     width: auto;
     padding-left: 40px;
     padding-right: 40px;
-    background-color: white;
     background: hsla(0,0,0,0.5);  /* 50% transparent */
 }
 .page-header-image-full {
